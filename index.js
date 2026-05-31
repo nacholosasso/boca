@@ -6,7 +6,8 @@ const storage = new Storage();
 
 const bucketName = 'api-data-boca-497814'; 
 const fileName = 'api_data.json';
-const API_KEY = 'c4f9b6874e0b54c97c54d75add1fa33d';
+// Leemos la clave desde las variables de entorno inyectadas por Google Cloud
+const API_KEY = process.env.API_KEY;
 
 // Endpoint que será llamado por el reloj de Cloud Scheduler
 app.post('/actualizar-datos', async (req, res) => {
