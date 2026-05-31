@@ -1,0 +1,645 @@
+:root {
+    --boca-blue: #001C4F; /* Azul profundo oficial */
+    --boca-blue-dark: #000c24; /* Azul estadio nocturno */
+    --boca-yellow: #FAB300; /* Oro xeneize puro */
+    --bg-color: #000814; /* Fondo noche épico */
+    --card-bg: #00143a; /* Azul oscuro para tarjetas */
+    --text-dark: #eef2f5; /* Texto principal claro */
+    --text-light: #8ca3ba; /* Texto secundario claro */
+    --white: #ffffff;
+    --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.5);
+    --shadow-hover: 0 15px 35px rgba(250, 179, 0, 0.2);
+}
+
+html {
+    scroll-behavior: smooth; /* Deslizamiento suave nivel Riquelme */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    background-image: radial-gradient(rgba(250, 179, 0, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* Utilidades */
+.mt-3 {
+    margin-top: 3rem !important;
+}
+
+/* Navbar Profesional */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 12, 36, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    box-sizing: border-box;
+    border-bottom: 2px solid var(--boca-yellow);
+}
+
+.nav-brand {
+    color: var(--boca-yellow);
+    font-weight: 800;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--boca-yellow);
+    text-shadow: 0 0 10px rgba(250, 179, 0, 0.4);
+}
+
+/* Accesibilidad: Para quienes navegan usando el teclado (Tab) */
+.nav-links a:focus-visible, .sidebar-links a:focus-visible {
+    outline: 2px dashed var(--boca-yellow);
+    outline-offset: 4px;
+}
+
+/* Menú Desplegable (Dropdown) */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(0, 12, 36, 0.95);
+    backdrop-filter: blur(10px);
+    min-width: 240px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    list-style: none;
+    border: 1px solid rgba(250, 179, 0, 0.2);
+    z-index: 1000;
+    margin-top: 1rem;
+}
+
+/* Puente invisible para que no se pierda el hover al bajar el mouse */
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    width: 100%;
+    height: 1rem;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    animation: dropFade 0.3s ease;
+}
+
+.dropdown-menu a {
+    padding: 0.8rem 1.5rem;
+    display: block;
+    font-size: 0.95rem;
+}
+
+.dropdown-menu a:hover {
+    padding-left: 2rem; /* Efecto de movimiento sutil */
+}
+
+@keyframes dropFade {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Sidebar Profesional */
+.sidebar {
+    position: fixed;
+    top: 70px; /* Debajo del navbar */
+    left: 0;
+    width: 240px;
+    height: calc(100vh - 70px);
+    background: var(--boca-blue-dark);
+    border-right: 1px solid rgba(250, 179, 0, 0.15);
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+    z-index: 900;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.3);
+}
+
+.sidebar-title {
+    color: var(--boca-yellow);
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-links li { margin-bottom: 1.2rem; }
+
+.sidebar-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-links a:hover {
+    background: rgba(250, 179, 0, 0.1);
+    color: var(--white);
+    padding-left: 1.5rem;
+    border-left: 4px solid var(--boca-yellow);
+}
+
+/* Hero Section */
+.hero {
+    /* ¡Efecto Camiseta de Boca! */
+    background: linear-gradient(180deg, var(--boca-blue) 0%, var(--boca-blue) 40%, var(--boca-yellow) 40%, var(--boca-yellow) 60%, var(--boca-blue) 60%, var(--boca-blue) 100%);
+    text-align: center;
+    padding: 6rem 2rem;
+    color: var(--white);
+    box-shadow: 0 10px 30px rgba(0, 28, 79, 0.4);
+    position: relative;
+    border-radius: 20px;
+    margin-bottom: 5rem;
+}
+
+.hero-content {
+    background: rgba(0, 28, 79, 0.7); /* Fondo semitransparente azul */
+    backdrop-filter: blur(8px);
+    padding: 3rem 4rem;
+    border-radius: 16px;
+    display: inline-block;
+    border: 1px solid rgba(250, 179, 0, 0.5);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.hero .subtitle {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--boca-yellow);
+    margin-top: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.hero .quote {
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 300;
+    margin-top: 2rem;
+    color: var(--white);
+    opacity: 0.85;
+}
+
+/* Layout & Typography */
+main {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Ajustes para Desktop (Cuando la Sidebar está visible) */
+@media (min-width: 1024px) {
+    .navbar {
+        padding-left: calc(240px + 3rem);
+    }
+    .main-content, .hero, .site-footer {
+        margin-left: 240px;
+    }
+}
+
+/* Ajustes para Mobile */
+@media (max-width: 1023px) {
+    .sidebar { display: none; } /* Ocultamos la barra lateral en celulares para que no moleste */
+    
+    main {
+        padding: 6rem 1rem 2rem 1rem; /* Reducimos el margen lateral en móviles */
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem; /* Evitamos que el título rompa el contenedor en pantallas pequeñas */
+    }
+    /* TODO: Implementar menú hamburguesa para que el usuario pueda navegar en móvil */
+}
+
+section {
+    margin-bottom: 5rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--boca-yellow);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 80px;
+    height: 6px;
+    background-color: var(--boca-yellow);
+    border-radius: 3px;
+}
+
+.subsection-title {
+    color: var(--white);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Badges & Stats */
+.stats-header {
+    background: var(--card-bg);
+    padding: 1.5rem 2rem;
+    border-radius: 16px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-soft);
+    border-left: 6px solid var(--boca-blue);
+    font-size: 1.1rem;
+}
+
+.api-badge {
+    background-color: #2ecc71;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(46, 204, 113, 0.3);
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.badge.primary { background: var(--boca-blue); color: var(--white); }
+.badge.secondary { background: var(--boca-yellow); color: var(--boca-blue-dark); }
+
+/* Grid & Cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(250, 179, 0, 0.1);
+    border-bottom: 6px solid var(--boca-blue);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    animation: fadeUp 0.6s ease-out backwards;
+}
+
+/* Animación de la caprichosa */
+.spin-ball {
+    display: inline-block;
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+    border-bottom: 6px solid var(--boca-yellow);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--boca-yellow);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.card strong {
+    color: var(--white);
+    font-weight: 600;
+}
+
+/* Títulos Historial (Dentro de la tarjeta) */
+.title-history {
+    margin-top: 1.5rem;
+    max-height: 150px;
+    overflow-y: auto;
+    border-top: 1px solid rgba(250, 179, 0, 0.2);
+    padding-top: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.title-history::-webkit-scrollbar {
+    width: 6px;
+}
+
+.title-history::-webkit-scrollbar-thumb {
+    background-color: var(--boca-blue);
+    border-radius: 4px;
+}
+
+.title-history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+}
+
+.title-history-item .year {
+    color: var(--boca-yellow);
+    font-weight: 800;
+    background: rgba(250, 179, 0, 0.1);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+.title-history-item .dt {
+    color: var(--white);
+    font-weight: 500;
+    text-align: right;
+}
+
+/* Detalles del jugador en el Plantel */
+.player-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.player-details p {
+    margin: 0;
+    font-size: 0.9rem !important;
+}
+
+.player-img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 1rem auto;
+    border: 3px solid var(--boca-yellow);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.player-name {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.player-number {
+    text-align: center;
+    font-size: 1.1rem !important;
+}
+
+/* Tarjetas de Partidos (Actualidad) */
+.match-card {
+    text-align: center;
+}
+
+.match-teams {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.match-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+}
+
+.match-team img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+.match-score { font-size: 2rem; font-weight: 800; color: var(--boca-yellow); }
+.match-vs { font-size: 1.2rem; font-weight: 800; color: var(--text-light); }
+
+/* Ranking Highlight */
+.rank-number {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    background: var(--boca-blue);
+    color: var(--boca-yellow);
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 800;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* La Bombonera Section */
+.templo-container {
+    background: radial-gradient(circle at center, var(--boca-blue) 0%, var(--boca-blue-dark) 100%);
+    color: var(--white);
+    padding: 4rem 2rem;
+    border-radius: 20px;
+    border: 2px solid var(--boca-yellow);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.templo-container::before {
+    content: '🏟️';
+    position: absolute;
+    font-size: 20rem;
+    opacity: 0.04;
+    top: -50px;
+    right: -50px;
+    pointer-events: none;
+}
+
+.templo-container h3 {
+    color: var(--boca-yellow);
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.templo-stats {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.templo-stat-item {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    border-radius: 16px;
+    min-width: 200px;
+    border: 1px solid rgba(250, 179, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.templo-stat-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.templo-stat-item span {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--boca-yellow);
+    margin-bottom: 0.5rem;
+}
+
+.templo-quote {
+    margin-top: 3rem;
+    font-style: italic;
+    color: #a0b2c6;
+    font-size: 1.2rem;
+}
+
+/* Footer */
+.site-footer {
+    background: var(--boca-blue-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+    border-top: 6px solid var(--boca-yellow);
+}
+
+.footer-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.footer-subtitle {
+    font-size: 0.9rem;
+    color: #8c9eff;
+}
+
+/* Botón Volver Arriba */
+.btn-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--boca-yellow);
+    color: var(--boca-blue-dark);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(250, 179, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 1500;
+}
+
+.btn-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}

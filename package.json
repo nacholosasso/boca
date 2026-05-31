@@ -1,0 +1,13 @@
+{
+  "name": "boca-backend",
+  "version": "1.0.0",
+  "description": "Backend en Cloud Run para Boca",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@google-cloud/storage": "^7.9.0",
+    "express": "^4.19.0"
+  }
+}

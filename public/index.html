@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sitio web homenaje al Club Atlético Boca Juniors. El único grande. La mitad más uno.">
+    <meta name="keywords" content="Boca Juniors, CABJ, Xeneize, La Bombonera, Riquelme, Maradona, Fútbol Argentino">
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/c/c9/Boca_Juniors_logo.svg" type="image/svg+xml">
+    <title>Homenaje a Boca Juniors 💙💛</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Barra de Navegación Premium -->
+    <nav class="navbar">
+        <div class="nav-brand">CABJ 💙💛</div>
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="#palmares">Palmarés ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#ultimos-titulos">Últimos 10 Títulos</a></li>
+                    <li><a href="#titulos-internacionales">Internacionales</a></li>
+                    <li><a href="#titulos-nacionales">Nacionales</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#idols">Ídolos ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#idolos-eternos">Ídolos Eternos</a></li>
+                    <li><a href="#top-jugadores">Top 10 Jugadores</a></li>
+                    <li><a href="#top-goleadores">Top 5 Goleadores</a></li>
+                    <li><a href="#top-tecnicos">Top 10 DTs</a></li>
+                    <li><a href="#presidentes">Presidentes</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#squad">Plantel ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#squad">Plantel Completo</a></li>
+                    <li><a href="#squad-stats">Top 10 Edades</a></li>
+                </ul>
+            </li>
+            <li><a href="#bombonera">El Templo</a></li>
+        </ul>
+    </nav>
+
+    <!-- Barra Lateral de Accesos Directos (Sidebar) -->
+    <aside class="sidebar">
+        <div class="sidebar-title">Mundo Xeneize</div>
+        <ul class="sidebar-links">
+            <li><a href="#historia">📖 Historia</a></li>
+            <li><a href="#superclasico">🆚 Superclásico</a></li>
+            <li><a href="#la12">🥁 La 12</a></li>
+            <li><a href="#museo">🏛️ Museo</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <!-- 1. Sección Palmarés -->
+        <section id="palmares">
+            <h2 class="section-title">Palmarés Histórico 🏆</h2>
+            <div class="stats-header">
+                <p>⭐ Primera División: 35 | 🏆 Libertadores: 6 | 🌎 Intercontinentales: 3 | 🏅 Totales: 74</p>
+            </div>
+
+            <h3 id="ultimos-titulos" class="subsection-title mt-3">⏱️ Últimos 10 Títulos</h3>
+            <div id="latest-titles-grid" class="grid" style="margin-bottom: 3rem;"></div>
+
+            <h3 id="titulos-internacionales" class="subsection-title">Títulos Internacionales (22)</h3>
+            <div id="titles-international-grid" class="grid"></div>
+            <h3 id="titulos-nacionales" class="subsection-title mt-3">Títulos Nacionales (52)</h3>
+            <div id="titles-national-grid" class="grid"></div>
+        </section>
+
+        <!-- 3. Sección Ídolos y Leyendas -->
+        <section id="idols">
+            <h2 class="section-title">Ranking Histórico: Ídolos y Leyendas 💙💛</h2>
+
+            <h3 id="idolos-eternos" class="subsection-title">🌟 Ídolos Eternos</h3>
+            <div id="general-idols-grid" class="grid"></div>
+            
+            <h3 id="top-jugadores" class="subsection-title mt-3">🏆 Top 10 Jugadores Más Ganadores</h3>
+            <div id="legends-grid" class="grid"></div>
+            
+            <h3 id="top-goleadores" class="subsection-title mt-3">⚽ Top 5 Goleadores Históricos</h3>
+            <div id="scorers-grid" class="grid"></div>
+            
+            <h3 id="top-tecnicos" class="subsection-title mt-3">👔 Top 10 Técnicos Más Ganadores</h3>
+            <div id="coaches-grid" class="grid"></div>
+            
+            <h3 id="presidentes" class="subsection-title mt-3">🏢 Presidentes Más Ganadores</h3>
+            <div id="presidents-grid" class="grid"></div>
+        </section>
+
+        <!-- Banner Hero movido después de Ídolos -->
+        <header class="hero">
+            <div class="hero-content">
+                <h1>Club Atlético Boca Juniors</h1>
+                <p class="subtitle">El único grande. Mitad más uno.</p>
+                <p class="quote">"La Bombonera no tiembla, late."</p>
+            </div>
+        </header>
+
+        <!-- 4. Sección Plantel Actual -->
+        <section id="squad">
+            <div class="section-header">
+                <h2 class="section-title">Plantel Actual <span class="spin-ball">⚽</span></h2>
+                <span class="api-badge">En vivo - API Football</span>
+            </div>
+            
+            <h3 class="subsection-title mt-3">Cuerpo Técnico 👔</h3>
+            <div id="current-coach-grid" class="grid" style="margin-bottom: 3rem;"></div>
+
+            <div id="squad-container"></div>
+            
+            <div id="squad-stats" style="margin-top: 4rem;">
+                <h3 class="subsection-title">Top 10 Edades del Plantel 📊</h3>
+                <div id="squad-stats-grid" class="grid"></div>
+            </div>
+        </section>
+
+        <!-- Secciones del Mundo Xeneize -->
+        <section id="historia">
+            <h2 class="section-title">Nuestra Historia 📖</h2>
+            <div class="card">
+                <h3 style="color: var(--boca-yellow); font-size: 1.8rem; margin-bottom: 1rem;">Los locos de la Plaza Solís</h3>
+                <p style="font-size: 1.05rem; line-height: 1.8;">El <strong>3 de abril de 1905</strong>, cinco jóvenes del barrio (Esteban Baglietto, Alfredo Scarpatti, Santiago Sana y los hermanos Teodoro y Juan Antonio Farenga) se reunieron en la Plaza Solís y dieron vida al <strong>Club Atlético Boca Juniors</strong>. Tras buscar inspiración en los barcos del puerto, adoptaron el azul y oro de la bandera de un buque sueco (el <em>Drottning Sophia</em>). El resto, es historia pura de grandeza y pasión.</p>
+            </div>
+        </section>
+
+        <section id="superclasico">
+            <h2 class="section-title">El Superclásico 🆚</h2>
+            <div class="card" style="border-bottom: 6px solid #e74c3c;">
+                <h3 style="color: var(--white); font-size: 1.8rem; margin-bottom: 1rem;">Dueños del Historial</h3>
+                <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem;">El enfrentamiento entre <strong>Boca Juniors</strong> y River Plate es reconocido como el clásico más apasionante del mundo. Pero hay una verdad innegable a lo largo de más de un siglo de historia: <strong>El historial oficial absoluto está a nuestro favor.</strong></p>
+                
+                <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 12px; display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; margin-bottom: 1.5rem; border: 1px solid rgba(250, 179, 0, 0.2);">
+                    <div>
+                        <span style="display: block; font-size: 3rem; font-weight: 800; color: var(--boca-yellow);">94</span>
+                        <span style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--white); font-weight: 600;">Victorias Boca</span>
+                    </div>
+                    <div>
+                        <span style="display: block; font-size: 3rem; font-weight: 800; color: var(--text-light);">85</span>
+                        <span style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--white); font-weight: 600;">Empates</span>
+                    </div>
+                    <div>
+                        <span style="display: block; font-size: 3rem; font-weight: 800; color: #e74c3c;">88</span>
+                        <span style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--white); font-weight: 600;">Victorias River</span>
+                    </div>
+                </div>
+                
+                <p style="font-size: 1.3rem; font-weight: 600; color: var(--boca-yellow); text-align: center;">¡Le llevamos 6 partidos oficiales de diferencia! 🤫</p>
+                <p style="font-style: italic; text-align: center; color: var(--text-light); margin-top: 1rem;">"Nacieron hijos nuestros, morirán hijos nuestros."</p>
+            </div>
+        </section>
+
+        <section id="la12">
+            <h2 class="section-title">Jugador N° 12 🥁</h2>
+            <div class="card">
+                <h3 style="color: var(--boca-yellow); font-size: 1.8rem; margin-bottom: 1rem;">La hinchada que gana partidos</h3>
+                <p style="font-size: 1.05rem; line-height: 1.8;">Mundialmente conocida como <strong>"La 12"</strong>, el apodo nació en 1925 gracias a Victoriano Caffarena, un hincha que acompañó al equipo en la histórica gira europea financiando parte del viaje, haciendo de masajista y utilero. Desde entonces, la hinchada de Boca es un jugador más que hace latir La Bombonera y empuja al equipo a la victoria sin importar el resultado.</p>
+            </div>
+        </section>
+
+        <section id="museo">
+            <h2 class="section-title">Museo de la Pasión 🏛️</h2>
+            <div class="card">
+                <h3 style="color: var(--boca-yellow); font-size: 1.8rem; margin-bottom: 1rem;">El guardián de nuestra gloria</h3>
+                <p style="font-size: 1.05rem; line-height: 1.8;">Inaugurado en 2001, el <strong>Museo de la Pasión Boquense</strong> es el primer museo temático de fútbol en América. Acá descansan nuestras Copas Libertadores e Intercontinentales, estatuas gigantes de ídolos como Riquelme, Maradona y Palermo, y las míticas camisetas que transpiraron nuestros próceres a lo largo de más de un siglo.</p>
+            </div>
+        </section>
+
+        <section id="socios">
+            <h2 class="section-title">Asociate al Único Grande 💳</h2>
+            <div class="templo-container">
+                <h3 style="font-size: 2.2rem; margin-bottom: 1rem;">La familia más grande del mundo</h3>
+                <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 2.5rem; color: #a0b2c6;">Con más de 300.000 socios activos y adherentes, Boca Juniors es la institución deportiva con mayor masa societaria de toda América. Porque Boca es de su gente y La Bombonera te espera.</p>
+                <a href="#socios" style="display: inline-block; background: var(--boca-yellow); color: var(--boca-blue-dark); padding: 1rem 2.5rem; font-size: 1.2rem; font-weight: 800; border-radius: 8px; text-decoration: none; text-transform: uppercase; box-shadow: 0 5px 15px rgba(250, 179, 0, 0.4);">Quiero ser Adherente</a>
+            </div>
+        </section>
+
+        <!-- 5. Sección La Bombonera -->
+        <section id="bombonera">
+            <h2 class="section-title">El Templo 🏟️</h2>
+            <div class="templo-container">
+                <h3>Estadio Alberto J. Armando</h3>
+                <p>Reconocido mundialmente como el estadio más pasional del planeta. Donde se vive el fútbol como en ningún otro lado.</p>
+                <div class="templo-stats">
+                    <div class="templo-stat-item"><span>1940</span> Año de Inauguración</div>
+                    <div class="templo-stat-item"><span>54.000+</span> Capacidad</div>
+                    <div class="templo-stat-item"><span>La 12</span> Jugador N° 12</div>
+                </div>
+                <p class="templo-quote">"La cancha de Boca no tiembla, late."</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p class="footer-title"><strong>ESTO ES BOCA</strong> 💙💛</p>
+        <p class="footer-subtitle">Sitio no oficial. Hecho por y para hinchas de la mitad más uno.</p>
+    </footer>
+
+    <!-- Botón Flotante Volver Arriba -->
+    <button id="btn-top" class="btn-top" title="Volver arriba">⬆</button>
+
+    <script src="app.js"></script>
+</body>
+</html>

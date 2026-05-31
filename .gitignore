@@ -1,0 +1,18 @@
+# Node.js / Dependencias
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Firebase
+.firebase/
+firebase-debug.log
+
+# Google Cloud
+*gcp-build*
+
+# Archivos del sistema operativo (Windows / Mac)
+.DS_Store
+Thumbs.db
+
+# Archivos de entorno y secretos
+.env
